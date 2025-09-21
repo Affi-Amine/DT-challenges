@@ -1,0 +1,4 @@
+John: Hello everyone, welcome to the meeting.
+Mary: Thanks John, I'm excited to be here.
+John: Let's start with the quarterly review.
+Mary: The numbers look great this quarter.

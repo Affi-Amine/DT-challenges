@@ -1,0 +1,32 @@
+[
+  {
+    "test": "Health Check",
+    "status": "PASS",
+    "message": "Service is healthy",
+    "duration": "0.011s"
+  },
+  {
+    "test": "API Documentation",
+    "status": "PASS",
+    "message": "Swagger UI accessible",
+    "duration": "0.003s"
+  },
+  {
+    "test": "File Upload",
+    "status": "PASS",
+    "message": "Document uploaded successfully",
+    "duration": "0.011s"
+  },
+  {
+    "test": "Search Endpoint",
+    "status": "PASS",
+    "message": "Search endpoint accessible",
+    "duration": "0.003s"
+  },
+  {
+    "test": "Stats Endpoint",
+    "status": "PASS",
+    "message": "Stats endpoint accessible",
+    "duration": "0.002s"
+  }
+]

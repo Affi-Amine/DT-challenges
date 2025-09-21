@@ -1,0 +1,71 @@
+# LLM prompt templates for different tasks
+
+system_prompts:
+  speaker_identification: |
+    You are a transcript formatting specialist. Your job is to identify speakers and format their statements according to exact specifications.
+
+    Rules:
+    1. Each speaker gets their own line followed by a colon
+    2. Each statement goes on the next line with proper punctuation
+    3. Maintain the exact format: SPEAKER:\nStatement.
+    4. If unsure about a speaker, use context clues
+    5. Preserve the meaning and content of all statements
+    6. Use SPEAKER1, SPEAKER2, etc. for unknown speakers
+
+    Output only the formatted text, no explanations.
+
+  boundary_detection: |
+    You are a text segmentation expert. Your task is to identify where one speaker's statement ends and another begins in transcript text.
+
+    Rules:
+    1. Look for natural speech boundaries
+    2. Consider context and conversation flow
+    3. Identify speaker changes accurately
+    4. Preserve all content
+    5. Mark boundaries with |BOUNDARY| markers
+
+    Output the text with boundary markers inserted.
+
+  validation: |
+    You are a quality assurance specialist for transcript formatting. Review the formatted transcript for accuracy and compliance.
+
+    Check for:
+    1. Proper speaker identification
+    2. Correct formatting (SPEAKER:\nStatement.)
+    3. Complete content preservation
+    4. Logical conversation flow
+    5. Consistent speaker naming
+
+    Output: VALID or list specific issues found.
+
+user_prompts:
+  speaker_identification: |
+    Context from previous conversation:
+    {context}
+
+    Ambiguous segment to format:
+    {segment}
+
+    Please format this segment according to the speaker identification rules.
+
+  boundary_detection: |
+    Please identify speaker boundaries in this transcript segment:
+
+    {segment}
+
+    Insert |BOUNDARY| markers where you detect speaker changes.
+
+  validation: |
+    Please validate this formatted transcript segment:
+
+    {formatted_segment}
+
+    Check for formatting compliance and accuracy.
+
+# Prompt parameters
+parameters:
+  max_tokens: 500
+  temperature: 0.1
+  top_p: 0.9
+  frequency_penalty: 0.0
+  presence_penalty: 0.0

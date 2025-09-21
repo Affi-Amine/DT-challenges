@@ -1,0 +1,28 @@
+{
+  "pushover": {
+    "enabled": true,
+    "app_token": "",
+    "user_key": "",
+    "api_url": "https://api.pushover.net/1/messages.json",
+    "timeout": 10,
+    "retry_attempts": 3
+  },
+  "email": {
+    "enabled": true,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "",
+    "password": "",
+    "from_email": "",
+    "to_email": "",
+    "use_tls": true,
+    "timeout": 30
+  },
+  "notification_settings": {
+    "success_notifications": true,
+    "failure_notifications": true,
+    "include_logs": true,
+    "max_log_lines": 50,
+    "rate_limit_minutes": 5
+  }
+}

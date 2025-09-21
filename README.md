@@ -174,26 +174,6 @@ cd challenge_3
 python -m pytest tests/ -v
 ```
 
-## 📊 Performance & Scalability
-
-### Challenge 1
-- **Throughput**: Processes 100+ documents/minute
-- **Search Speed**: Sub-100ms response times with caching
-- **Scalability**: Horizontal scaling with Docker Swarm/Kubernetes
-- **Storage**: Efficient vector storage with pgvector
-
-### Challenge 2
-- **Reliability**: 99.9% execution success rate
-- **Monitoring**: Real-time notifications and logging
-- **Resource Usage**: Minimal system impact
-- **Maintenance**: Automatic log cleanup and rotation
-
-### Challenge 3
-- **Processing Speed**: 1000+ lines/second
-- **Accuracy**: 95%+ speaker detection accuracy
-- **Batch Processing**: Handles large file sets efficiently
-- **Memory Usage**: Optimized for large transcript files
-
 ## 🔧 Configuration
 
 Each challenge supports extensive configuration:

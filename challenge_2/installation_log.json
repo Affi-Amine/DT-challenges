@@ -1,0 +1,140 @@
+{
+  "installation_date": "2025-09-18T09:56:57.942627",
+  "system_info": {
+    "system": "Darwin",
+    "release": "23.5.0",
+    "version": "Darwin Kernel Version 23.5.0: Wed May  1 20:19:05 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8112",
+    "machine": "arm64",
+    "processor": "arm",
+    "python_version": "3.13.2",
+    "python_executable": "/Users/mac/Desktop/MAYNA/Code/test internships/challenge_2/venv/bin/python"
+  },
+  "steps": [
+    {
+      "timestamp": "2025-09-18T09:55:53.510659",
+      "step": "install_pyyaml>=6.0",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:53.855071",
+      "step": "install_requests>=2.25.0",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.205905",
+      "step": "install_psutil>=5.8.0",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.541763",
+      "step": "install_python-dotenv>=0.19.0",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.542154",
+      "step": "create_dir_scripts",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.542188",
+      "step": "create_dir_config",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.542210",
+      "step": "create_dir_logs",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.542240",
+      "step": "create_dir_tests",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.544790",
+      "step": "create_env_file",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.554131",
+      "step": "validate_config",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.556917",
+      "step": "chmod_daily_scheduler.py",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.557038",
+      "step": "chmod_execution_wrapper.py",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.561992",
+      "step": "chmod_target_script.py",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.572999",
+      "step": "secure_.env",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.577742",
+      "step": "secure_config.yaml",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.654648",
+      "step": "test_config_manager",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.668044",
+      "step": "test_logging_system",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.946594",
+      "step": "test_notification_system",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.960826",
+      "step": "create_requirements",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:55:54.963322",
+      "step": "create_readme",
+      "success": true,
+      "details": ""
+    },
+    {
+      "timestamp": "2025-09-18T09:56:57.941584",
+      "step": "create_cron_job",
+      "success": true,
+      "details": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+John: Hello, how are you today?
+Mary: I'm doing well, thank you for asking. How about you?
+John: I'm great, thanks! I wanted to discuss the project with you.
+Mary: Sure, what would you like to know?
+Dr. Smith: May I join this conversation?
+John: Of course, Dr. Smith. We were just discussing the project timeline.
+Mary: Yes, we need to finalize the deliverables by next week.
+Dr. Smith: That sounds reasonable. I'll review the requirements tonight.

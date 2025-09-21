@@ -1,0 +1,229 @@
+# Challenge 2: Simple Cron Job - Configuration File
+# Author: Amine Affi
+# Description: Central configuration for the cron job system
+
+# System Configuration
+system:
+  name: "Simple Cron Job System"
+  version: "1.0.0"
+  environment: "production"  # development, staging, production
+  timezone: "UTC"
+  
+# Scheduling Configuration
+scheduling:
+  # Number of executions per day
+  executions_per_day: 10
+  
+  # Time window for scheduling (24-hour format)
+  time_window:
+    start: "06:00"  # 6:00 AM
+    end: "22:00"    # 10:00 PM
+  
+  # Minimum interval between executions (minutes)
+  min_interval: 30
+  
+  # Maximum retry attempts for scheduling
+  max_retry_attempts: 3
+  
+  # Scheduler lock timeout (seconds)
+  lock_timeout: 300
+
+# Target Script Configuration
+target_script:
+  # Path to the script to execute
+  path: "/Users/mac/Desktop/MAYNA/Code/test internships/challenge_2/scripts/target_script.py"
+  
+  # Python interpreter to use
+  python_interpreter: "python3"
+  
+  # Execution timeout (seconds)
+  timeout: 300
+  
+  # Working directory for script execution
+  working_directory: "/Users/mac/Desktop/MAYNA/Code/test internships/challenge_2"
+  
+  # Environment variables to set
+  environment_variables:
+    PYTHONPATH: "/Users/mac/Desktop/MAYNA/Code/test internships/challenge_2"
+    CRON_JOB_ENV: "production"
+
+# Logging Configuration
+logging:
+  # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  level: "INFO"
+  
+  # Log directory
+  directory: "/Users/mac/Desktop/MAYNA/Code/test internships/challenge_2/logs"
+  
+  # Log file naming pattern
+  filename_pattern: "cron_job_{date}.log"
+  
+  # Maximum log file size (MB)
+  max_file_size: 10
+  
+  # Number of backup files to keep
+  backup_count: 30
+  
+  # Log rotation frequency (daily, weekly, monthly)
+  rotation: "daily"
+  
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Date format
+  date_format: "%Y-%m-%d %H:%M:%S"
+  
+  # Enable console logging
+  console_logging: true
+  
+  # Enable file logging
+  file_logging: true
+
+# Notification Configuration
+notifications:
+  # Enable notifications
+  enabled: true
+  
+  # Notification channels (in order of preference)
+  channels:
+    - "pushover"
+    - "email"
+  
+  # Pushover configuration
+  pushover:
+    enabled: true
+    api_token: ""  # Set via environment variable PUSHOVER_API_TOKEN
+    user_key: ""   # Set via environment variable PUSHOVER_USER_KEY
+    priority: 0    # -2 to 2 (lowest to highest)
+    sound: "pushover"
+    retry: 60      # seconds (for priority 2)
+    expire: 3600   # seconds (for priority 2)
+    
+  # Email configuration
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true
+    username: ""   # Set via environment variable EMAIL_USERNAME
+    password: ""   # Set via environment variable EMAIL_PASSWORD
+    from_address: ""  # Set via environment variable EMAIL_FROM
+    to_addresses:
+      - ""  # Set via environment variable EMAIL_TO
+    
+  # Notification triggers
+  triggers:
+    on_success: false
+    on_warning: true
+    on_error: true
+    on_critical: true
+    on_start: false
+    on_completion: true
+    
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    max_notifications_per_hour: 10
+    cooldown_period: 300  # seconds
+
+# Monitoring Configuration
+monitoring:
+  # Enable system monitoring
+  enabled: true
+  
+  # Resource monitoring
+  resources:
+    # Monitor CPU usage
+    cpu_threshold: 80  # percentage
+    
+    # Monitor memory usage
+    memory_threshold: 80  # percentage
+    
+    # Monitor disk usage
+    disk_threshold: 90  # percentage
+    
+    # Monitor load average
+    load_threshold: 2.0
+  
+  # Health checks
+  health_checks:
+    enabled: true
+    interval: 60  # seconds
+    timeout: 30   # seconds
+    
+  # Metrics collection
+  metrics:
+    enabled: true
+    retention_days: 30
+
+# Error Handling Configuration
+error_handling:
+  # Maximum retry attempts for failed executions
+  max_retries: 3
+  
+  # Retry delay (seconds)
+  retry_delay: 60
+  
+  # Exponential backoff multiplier
+  backoff_multiplier: 2.0
+  
+  # Maximum retry delay (seconds)
+  max_retry_delay: 3600
+  
+  # Enable self-healing
+  self_healing:
+    enabled: true
+    max_healing_attempts: 5
+    healing_cooldown: 1800  # seconds
+
+# Security Configuration
+security:
+  # File permissions
+  file_permissions:
+    scripts: "755"
+    logs: "644"
+    config: "600"
+    
+  # Enable secure random generation
+  secure_random: true
+  
+  # Validate script integrity
+  script_validation:
+    enabled: true
+    checksum_algorithm: "sha256"
+
+# Maintenance Configuration
+maintenance:
+  # Log cleanup
+  log_cleanup:
+    enabled: true
+    retention_days: 30
+    cleanup_schedule: "daily"
+    
+  # Temporary file cleanup
+  temp_cleanup:
+    enabled: true
+    cleanup_interval: 3600  # seconds
+    
+  # System health reports
+  health_reports:
+    enabled: true
+    frequency: "weekly"
+    email_reports: true
+
+# Development Configuration (only used when environment is 'development')
+development:
+  # Enable debug mode
+  debug: true
+  
+  # Mock notifications (don't send real notifications)
+  mock_notifications: true
+  
+  # Reduced execution count for testing
+  test_executions_per_day: 3
+  
+  # Shorter intervals for testing
+  test_min_interval: 5  # minutes
+  
+  # Enable verbose logging
+  verbose_logging: true

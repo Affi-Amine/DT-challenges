@@ -1,0 +1,117 @@
+[
+  {
+    "test": "Configuration Files",
+    "status": "PASS",
+    "message": "All config files exist and are loadable",
+    "duration": "0.007s",
+    "details": {
+      "patterns_exists": true,
+      "prompts_exists": true
+    }
+  },
+  {
+    "test": "Pattern Matcher Component",
+    "status": "PASS",
+    "message": "Found 3 speaker patterns",
+    "duration": "0.004s",
+    "details": {
+      "matches": 3
+    }
+  },
+  {
+    "test": "Speaker Normalizer Component",
+    "status": "PASS",
+    "message": "Normalized 5 to 4 speakers",
+    "duration": "0.004s",
+    "details": {
+      "original": [
+        "john",
+        "MARY",
+        "Speaker_1",
+        "Dr. Smith",
+        "mary"
+      ],
+      "normalized": [
+        "John",
+        "Mary",
+        "Speaker_1",
+        "Smith",
+        "Mary"
+      ]
+    }
+  },
+  {
+    "test": "Format Enforcer Component",
+    "status": "PASS",
+    "message": "Correctly validated transcript formats",
+    "duration": "0.000s",
+    "details": {
+      "good_valid": true,
+      "bad_valid": false
+    }
+  },
+  {
+    "test": "Basic Transcript Processing",
+    "status": "PASS",
+    "message": "Processed 2 speakers",
+    "duration": "0.008s",
+    "details": {
+      "speakers": [
+        "John",
+        "Mary"
+      ],
+      "lines": 6
+    }
+  },
+  {
+    "test": "Complex Transcript Processing",
+    "status": "PASS",
+    "message": "Processed 4 speakers successfully",
+    "duration": "0.007s",
+    "details": {
+      "speakers": [
+        "John Smith",
+        "Mary",
+        "Speaker 1",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "test": "Different Processing Modes",
+    "status": "PASS",
+    "message": "3/3 modes successful",
+    "duration": "0.022s",
+    "details": {
+      "fast": true,
+      "balanced": true,
+      "thorough": true
+    }
+  },
+  {
+    "test": "File Processing",
+    "status": "PASS",
+    "message": "Successfully processed file with 2 speakers",
+    "duration": "0.008s",
+    "details": {
+      "input_file": "tmpqpjj_x7w.txt",
+      "output_length": 43
+    }
+  },
+  {
+    "test": "Sample Data Processing",
+    "status": "SKIP",
+    "message": "No processable sample files found",
+    "duration": "0.007s",
+    "details": {}
+  },
+  {
+    "test": "CLI Interface",
+    "status": "PASS",
+    "message": "CLI interface is functional",
+    "duration": "1.106s",
+    "details": {
+      "help_available": true
+    }
+  }
+]

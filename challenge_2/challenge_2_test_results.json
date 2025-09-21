@@ -1,0 +1,109 @@
+[
+  {
+    "test": "System Installation",
+    "status": "PASS",
+    "message": "Installed on 2025-09-18T09:56:57.942627",
+    "duration": "0.001s",
+    "details": {
+      "python_version": null,
+      "system": null
+    }
+  },
+  {
+    "test": "Script Files Exist",
+    "status": "PASS",
+    "message": "All 7 scripts found",
+    "duration": "0.000s",
+    "details": {
+      "scripts": [
+        "daily_scheduler.py",
+        "execution_wrapper.py",
+        "system_health_monitor.py",
+        "target_script.py",
+        "notification_system.py",
+        "config_manager.py",
+        "logging_system.py"
+      ]
+    }
+  },
+  {
+    "test": "Configuration Files",
+    "status": "PASS",
+    "message": "Found 3 config files + env file",
+    "duration": "0.000s",
+    "details": {
+      "config_files": [
+        "config.yaml",
+        "notification_config.json",
+        "scheduler_config.json"
+      ],
+      "env_exists": false
+    }
+  },
+  {
+    "test": "Log Directory",
+    "status": "PASS",
+    "message": "Found 5 recent log files",
+    "duration": "0.000s",
+    "details": {
+      "recent_logs": [
+        "health_monitor_20250920.log",
+        "notifications_20250920.log",
+        "scheduler_20250921.log",
+        "scheduler_20250920.log",
+        "cron_manager_20250920.log"
+      ],
+      "total_logs": 10
+    }
+  },
+  {
+    "test": "Cron Jobs Active",
+    "status": "PASS",
+    "message": "Found 6 active cron jobs",
+    "duration": "0.009s",
+    "details": {
+      "jobs": [
+        "0 6 * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/daily_scheduler.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_scheduler.log 2>&1",
+        "0 12 * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/daily_scheduler.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_scheduler.log 2>&1",
+        "0 18 * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/daily_scheduler.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_scheduler.log 2>&1",
+        "*/5 * * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/health_check_runner.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_health.log 2>&1",
+        "0 */2 * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/emergency_scheduler.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_emergency.log 2>&1",
+        "0 0 * * * /opt/anaconda3/bin/python /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/scripts/log_cleanup.py >> /Users/mac/Desktop/MAYNA/Code/test internships/DiploTools internship/challenge_2/logs/cron_cleanup.log 2>&1"
+      ]
+    }
+  },
+  {
+    "test": "Scheduled Jobs Queue",
+    "status": "PASS",
+    "message": "Found 10 scheduled jobs",
+    "duration": "0.006s",
+    "details": {
+      "job_count": 10
+    }
+  },
+  {
+    "test": "Health Monitor Running",
+    "status": "PASS",
+    "message": "Health monitor active (PID found)",
+    "duration": "0.057s",
+    "details": {
+      "process_count": 1
+    }
+  },
+  {
+    "test": "Daily Scheduler Execution",
+    "status": "PASS",
+    "message": "Scheduler executed successfully (dry run)",
+    "duration": "4.073s",
+    "details": {
+      "output_lines": 20
+    }
+  },
+  {
+    "test": "Target Script Execution",
+    "status": "FAIL",
+    "message": "Target script execution timed out",
+    "duration": "10.009s",
+    "details": {}
+  }
+]

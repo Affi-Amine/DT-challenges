@@ -1,0 +1,82 @@
+# Speaker identification patterns with confidence scores
+speaker_patterns:
+  timestamp_speaker:
+    pattern: '^\[\d{2}:\d{2}\]\s*([A-Za-z][A-Za-z\s\-\.]+?)(?:\s*\([^)]+\))?:\s*(.+)$'
+    confidence: 0.95
+    description: "Timestamped: [14:30] Speaker Name (Role): Statement"
+    
+  formal_with_role:
+    pattern: '^([A-Za-z][A-Za-z\s\-\.]+?)\s*\([^)]+\):\s*(.+)$'
+    confidence: 0.9
+    description: "Speaker with role: John Smith (CEO): Statement"
+    
+  prefixed_speaker:
+    pattern: '^(?:>>?\s*|[-\*]\s*)([A-Za-z][A-Za-z\s\-\.]+?):\s*(.+)$'
+    confidence: 0.85
+    description: "Prefixed speakers: >> Interviewer: or - Mary Johnson:"
+    
+  doctor_title:
+    pattern: '^(Dr\.?\s+[A-Za-z][A-Za-z\s\-\.]+?):\s*(.+)$'
+    confidence: 0.9
+    description: "Doctor titles: Dr. Elizabeth Wilson-Brown III:"
+    
+  numbered_speaker:
+    pattern: '^(SPEAKER\s*\d+):\s*(.+)$'
+    confidence: 0.95
+    description: "Numbered speakers: SPEAKER1: Statement"
+    
+  full_name_speaker:
+    pattern: '^([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+):\s*(.+)$'
+    confidence: 0.9
+    description: "Full names: John Smith: Statement"
+    
+  single_name:
+    pattern: '^([A-Z][a-z]{2,}):\s*(.+)$'
+    confidence: 0.8
+    description: "Single names: John: Statement (minimum 3 letters)"
+    
+  single_letter:
+    pattern: '^([A-Z]):\s*(.+)$'
+    confidence: 0.75
+    description: "Single letter abbreviations: J: Statement"
+
+# Edge cases requiring special handling
+edge_cases:
+  continuation:
+    pattern: '^\s*\.{3}(.+)$'
+    confidence: 0.6
+    description: "Continuation: ...continuing from before"
+    
+  interruption:
+    pattern: '^([A-Za-z\s]+):\s*—\s*(.+)$'
+    confidence: 0.65
+    description: "Interruption: John: — wait, let me finish"
+    
+  multiple_speakers:
+    pattern: '^([A-Za-z\s]+)\s*and\s*([A-Za-z\s]+):\s*(.+)$'
+    confidence: 0.5
+    description: "Multiple speakers: John and Mary: Statement"
+    
+  action_description:
+    pattern: '^\*([^*]+)\*\s*(.+)$'
+    confidence: 0.4
+    description: "Action: *John nods* I agree"
+
+# Noise patterns to filter out
+noise_patterns:
+  - '^\[MUSIC\]'
+  - '^\[APPLAUSE\]'
+  - '^\[INAUDIBLE\]'
+  - '^\[TECHNICAL DIFFICULTIES\]'
+  - '^--+$'
+  - '^\s*$'
+
+# Speaker name normalization rules
+normalization:
+  remove_patterns:
+    - '\([^)]+\)'  # Remove parenthetical content
+    - '\[[^\]]+\]'  # Remove bracketed content
+    - '[^\w\s]'     # Remove special characters except spaces
+  
+  title_case: true
+  max_speaker_length: 50

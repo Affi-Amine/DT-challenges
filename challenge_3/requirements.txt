@@ -1,0 +1,27 @@
+# Core dependencies
+openai>=1.0.0
+google-generativeai>=0.8.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+requests>=2.31.0
+
+# Text processing
+regex>=2023.10.3
+nltk>=3.8.1
+fuzzywuzzy>=0.18.0
+python-levenshtein>=0.21.1
+
+# Utilities
+click>=8.1.7
+colorama>=0.4.6
+tqdm>=4.66.1
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Development
+black>=23.9.1
+flake8>=6.1.0
+mypy>=1.6.0
